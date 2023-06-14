@@ -1,0 +1,16 @@
+<td [class.blank]="!correctLetter"
+    [class.correct]="correctLetter && letter === correctLetter"
+>
+  <div *ngIf="wordNumber" class="word_start">
+    {{wordNumber}}
+  </div>
+  <input type="text" maxlength="1"
+         #input
+         [ngModel]="letter"
+         (click)="input.select()"
+         (ngModelChange)="toUppercase($event)"
+         [disabled]="!correctLetter"
+         [class.correct]="correctGuess()"
+  />
+</td>
+

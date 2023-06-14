@@ -1,0 +1,40 @@
+td {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  position: relative;
+}
+
+input {
+  width: 30px;
+  height: 35px;
+  margin: 3px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: center;
+  cursor: pointer;
+}
+
+input:disabled {
+  background-color: lightgray;
+  cursor: auto;
+}
+
+.blank {
+  background-color: lightgray;
+}
+
+.correct {
+  background-color: hotpink;
+  color: white;
+}
+
+.word_start {
+  margin-left: 2px;
+  display: block;
+  float: left;
+  position: absolute;
+  font-size: 12px;
+}
