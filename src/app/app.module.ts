@@ -14,11 +14,12 @@ import { FormsModule } from "@angular/forms";
     CluesComponent,
     SquareComponent
   ],
-	imports: [
-		BrowserModule,
-		FormsModule
-	],
+  imports: [
+    BrowserModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
