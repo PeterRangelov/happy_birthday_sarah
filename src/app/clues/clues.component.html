@@ -1,39 +1,17 @@
-Vertical:
-<ol>
-  <li>
-    <img src="assets/how_you_doin.gif">
-  </li>
-  <li>
-    Luxury mountain resort located north of Sofia, Bulgaria.
-  </li>
-  <li>
-    39°13'56.7"N 76°51'10.8"W
-  </li>
-  <li>
-    Berry's excuse: It doesn't have to ____.
-  </li>
+ACROSS
+<div *ngFor="let c of getAcross()">
+  {{c.idx}}.
+  <img *ngIf="c.imgSrc" [src]="c.imgSrc">
+  {{c.clue}}
+</div>
 
-</ol>
+<br>
 
-Horizontal:
-<ol>
-  <li>
-    Whatchu doing?
-  </li>
-  <li>
-    Frantic noises.
-  </li>
-  <li>
-    Have a good _____ morning.
-  </li>
-  <li>
-    Your ____ is my drug.
-  </li>
-  <li>
-    An imperative directing one's interlocutor to cease current activity used frequently in colloquial
-    Bulgarian-English.
-  </li>
-  <li>
-    Sounds like a ___ problem.
-  </li>
-</ol>
+DOWN
+<div *ngFor="let c of getDown()">
+  {{c.idx}}.
+  <img *ngIf="c.imgSrc" [src]="c.imgSrc">
+  {{c.clue}}
+</div>
+
+

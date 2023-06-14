@@ -6,6 +6,7 @@ import { CrosswordComponent } from './crossword/crossword.component';
 import { CluesComponent } from './clues/clues.component';
 import { SquareComponent } from './square/square.component';
 import { FormsModule } from "@angular/forms";
+import { NgOptimizedImage } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule } from "@angular/forms";
   imports: [
     BrowserModule,
     FormsModule,
+    NgOptimizedImage,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,14 +1,16 @@
-import { AfterViewInit, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { SquareComponent } from "../square/square.component";
 import { UntilDestroy } from "@ngneat/until-destroy";
 import { tap } from "rxjs";
+
 @UntilDestroy()
 @Component({
   selector: 'app-crossword',
   templateUrl: './crossword.component.html',
-  styleUrls: ['./crossword.component.css']
+  styleUrls: ['./crossword.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CrosswordComponent implements OnInit, AfterViewInit{
+export class CrosswordComponent implements OnInit, AfterViewInit {
   @ViewChildren(SquareComponent) squares: QueryList<SquareComponent>;
 
   ngOnInit(): void {
@@ -22,9 +24,9 @@ export class CrosswordComponent implements OnInit, AfterViewInit{
       )
       .subscribe();
 
-    this.squares.forEach(square=> {
+    this.squares.forEach(square => {
       square.correct.subscribe(
-        _=> {
+        _ => {
           if (this.allCorrect()) {
             console.log('GOTEM')
           }
