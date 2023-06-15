@@ -1,6 +1,14 @@
 <div class="container-fluid">
+  <canvas id="canvas"
+          [ngStyle]="{
+          'z-index': (this.completed$ | async) ?
+           10 : -10
+           }"
+  ></canvas>
   <div class="row">
-    <app-crossword class="col-md-12 col-lg-6"/>
-    <app-clues class="col-md-12 col-lg-6"/>
+    <app-crossword class="col-md-12 col-lg-12 col-xl-8"
+                   (completed)="rainConfetti()"/>
+    <app-clues class="col-md-12 col-lg-12 col-xl-4"/>
   </div>
 </div>
+

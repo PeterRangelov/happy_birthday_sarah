@@ -1,3 +1,5 @@
 table {
+  display: block;
+  width: max-content;
   border-collapse: unset;
 }

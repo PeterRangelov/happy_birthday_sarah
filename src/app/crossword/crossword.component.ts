@@ -1,4 +1,13 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  QueryList,
+  ViewChildren
+} from '@angular/core';
 import { SquareComponent } from "../square/square.component";
 import { UntilDestroy } from "@ngneat/until-destroy";
 import { tap } from "rxjs";
@@ -12,6 +21,7 @@ import { tap } from "rxjs";
 })
 export class CrosswordComponent implements OnInit, AfterViewInit {
   @ViewChildren(SquareComponent) squares: QueryList<SquareComponent>;
+  @Output() completed = new EventEmitter<void>();
 
   ngOnInit(): void {
 
@@ -28,7 +38,7 @@ export class CrosswordComponent implements OnInit, AfterViewInit {
       square.correct.subscribe(
         _ => {
           if (this.allCorrect()) {
-            console.log('GOTEM')
+            this.completed.emit();
           }
         }
       )
