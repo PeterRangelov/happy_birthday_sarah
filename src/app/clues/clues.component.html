@@ -1,12 +1,3 @@
-ACROSS
-<div *ngFor="let c of getAcross()">
-  {{c.idx}}.
-  <img *ngIf="c.imgSrc" [src]="c.imgSrc">
-  {{c.clue}}
-</div>
-
-<br>
-
 DOWN
 <div *ngFor="let c of getDown()">
   {{c.idx}}.
@@ -14,4 +5,11 @@ DOWN
   {{c.clue}}
 </div>
 
+<br>
 
+ACROSS
+<div *ngFor="let c of getAcross()">
+  {{c.idx}}.
+  <img *ngIf="c.imgSrc" [src]="c.imgSrc">
+  {{c.clue}}
+</div>
